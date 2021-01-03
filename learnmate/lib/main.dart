@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learnmate/screens/authenticate.dart';
+import 'package:learnmate/screens/home.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:get/get.dart';
 
@@ -49,9 +50,7 @@ class _MainAppState extends State<MainApp> {
         body: Authentication(),
       );
     } else {
-      return Scaffold(
-        body: Text("Entered Home"),
-      );
+      return Home();
     }
   }
 }

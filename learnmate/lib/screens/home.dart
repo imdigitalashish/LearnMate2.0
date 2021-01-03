@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/snackbar/snack.dart';
+import 'package:learnmate/screens/home_screens/study.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -6,8 +8,59 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int _currentIndex = 0;
+
+  static List<Widget> _widgetOptions = <Widget>[
+    Student(),
+  ];
+
+  static List<Color> _colors = <Color>[
+    Colors.orange[200],
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: SafeArea(
+        child: _widgetOptions.elementAt(_currentIndex),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: _colors.elementAt(_currentIndex),
+        items: [
+          BottomNavigationBarItem(
+            backgroundColor: Colors.orange[400],
+            icon: Icon(Icons.book),
+            label: "Study",
+          ),
+          BottomNavigationBarItem(
+            backgroundColor: Colors.green[400],
+            icon: Icon(Icons.poll),
+            label: "Tools",
+          ),
+          BottomNavigationBarItem(
+            backgroundColor: Colors.red[400],
+            icon: Icon(Icons.science),
+            label: "Productivity",
+          ),
+          BottomNavigationBarItem(
+            backgroundColor: Colors.black,
+            icon: Icon(Icons.all_inclusive),
+            label: "Casual",
+          ),
+          BottomNavigationBarItem(
+            backgroundColor: Colors.black,
+            icon: Icon(Icons.person),
+            label: "Profile",
+          ),
+        ],
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
+      ),
+    );
   }
 }

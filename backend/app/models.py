@@ -9,3 +9,6 @@ class Users(models.Model):
 
     class Meta:
         verbose_name_plural = "Users"
+
+# Todo -> phone_number, item
+# Donate Book -> your_name, mobile, email, book_name, type[ebook, hardcopy]
