@@ -139,21 +139,48 @@ class _TranslationHindiState extends State<TranslationHindi> {
                 ),
               ),
             ),
-            RaisedButton(
-              child: Text("Translate"),
-              color: Colors.purple[300],
-              textColor: Colors.white,
-              onPressed: () async {
-                final translator = GoogleTranslator();
-                final text =
-                    await translator.translate(translateText.text, to: 'hi');
-                setState(() {
-                  data = text.toString();
-                });
-              },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                RaisedButton(
+                  child: Text("Translate"),
+                  color: Colors.purple[300],
+                  textColor: Colors.white,
+                  onPressed: () async {
+                    final translator = GoogleTranslator();
+                    final text = await translator.translate(translateText.text,
+                        to: 'hi');
+                    setState(() {
+                      data = text.toString();
+                    });
+                  },
+                ),
+                RaisedButton(
+                  child: Text("Clear"),
+                  color: Colors.red,
+                  textColor: Colors.white,
+                  onPressed: () {
+                    setState(() {
+                      this.translateText.text = "";
+                    });
+                  },
+                ),
+              ],
             ),
-            SingleChildScrollView(
-              child: Text(data),
+            Expanded(
+              flex: 1,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Text(
+                    data,
+                    style: TextStyle(
+                      fontSize: 17,
+                    ),
+                  ),
+                ),
+              ),
             )
           ],
         ),
