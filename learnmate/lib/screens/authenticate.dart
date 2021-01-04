@@ -164,6 +164,7 @@ class _AuthenticationState extends State<Authentication> {
   _registerUser() async {
     canLoginRegister = false;
     var client = http.Client();
+
     try {
       var uriResponse = await client.post(server_url +
           "registerUser?username=${registerUsernameController.text.trim()}&phone=${registerPhoneController.text.trim()}&password=${registerPasswordController.text.trim()}&name=${registerNameController.text.trim()}");
@@ -174,6 +175,7 @@ class _AuthenticationState extends State<Authentication> {
         shared.setString("username", registerUsernameController.text.trim());
         shared.setString("password", registerPasswordController.text.trim());
         shared.setString("phone_number", registerPhoneController.text.trim());
+
         shared.setInt("state", 1);
         Navigator.of(context).popUntil((route) => route.isFirst);
 
@@ -277,7 +279,7 @@ class _AuthenticationState extends State<Authentication> {
                             'https://i.pinimg.com/originals/65/dc/a6/65dca69f78972935caf61580e7c17bd9.png'),
                       ),
                       Text(
-                        "Sign In",
+                        "Sign In To Learn Mate",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 35,

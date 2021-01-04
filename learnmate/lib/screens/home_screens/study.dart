@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:learnmate/screens/home_screens/study/learnenglish.dart';
 import 'package:learnmate/screens/home_screens/study/learnhindi.dart';
+import 'package:learnmate/screens/home_screens/study/learnscience.dart';
 
 class Student extends StatefulWidget {
   @override
@@ -64,9 +66,12 @@ class _StudentState extends State<Student> {
           Padding(
             padding: const EdgeInsets.only(left: 12.0, right: 12.0, top: 26),
             child: InkWell(
-              onTap: () {
-                print("Hello");
-              },
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => EnglishMain(),
+                ),
+              ),
               child: Card(
                 elevation: 20,
                 color: Colors.orange[400],
@@ -100,9 +105,12 @@ class _StudentState extends State<Student> {
           Padding(
             padding: const EdgeInsets.only(left: 12.0, right: 12.0, top: 26),
             child: InkWell(
-              onTap: () {
-                print("Hello");
-              },
+              onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => LearnScienceMain(),
+                ),
+              ),
               child: Card(
                 elevation: 20,
                 color: Colors.orange[400],
