@@ -59,3 +59,28 @@ async def login(phone, password, response: Response):
         return {"result": "no such user"}
 
 
+
+@app.post("/addTodo")
+async def addTodo(phone_number, todo, response: Response):
+    try:
+        conn = sqlite3.connect("db.sqlite3")
+        conn.execute("INSERT INTO app_todolist (phone_number, todo_item) VALUES (?,?)", [phone_number, todo])
+        conn.commit()
+        conn.close()
+        response.status_code = 200
+    except:
+        response.status_code = 404
+
+@app.get("/getTodos")
+async def getTodos(phone_number):
+    conn = sqlite3.connect("db.sqlite3")
+    cur = conn.execute("SELECT * FROM app_todolist WHERE phone_number=?", [phone_number])
+    todos = []
+    for i in cur.fetchall():
+        todo = {}
+        todo["id"] = i[0]
+        todo["item"] = i[2]
+        todos.append(todo)
+    return todos
+        
+

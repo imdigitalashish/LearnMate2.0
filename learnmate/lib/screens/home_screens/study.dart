@@ -53,7 +53,7 @@ class _StudentState extends State<Student> {
                       Text(
                         "Learn Hindi",
                         style: TextStyle(
-                          fontSize: 32,
+                          fontSize: MediaQuery.of(context).size.width * 0.08,
                           color: Colors.white,
                         ),
                       ),
@@ -92,7 +92,7 @@ class _StudentState extends State<Student> {
                       Text(
                         "Learn English",
                         style: TextStyle(
-                          fontSize: 32,
+                          fontSize: MediaQuery.of(context).size.width * 0.08,
                           color: Colors.white,
                         ),
                       ),
@@ -131,7 +131,7 @@ class _StudentState extends State<Student> {
                       Text(
                         "Learn Science",
                         style: TextStyle(
-                          fontSize: 32,
+                          fontSize: MediaQuery.of(context).size.width * 0.08,
                           color: Colors.white,
                         ),
                       ),

@@ -12,6 +12,8 @@ class LearnScienceMain extends StatefulWidget {
 }
 
 class _LearnScienceMainState extends State<LearnScienceMain> {
+  final double boxSize = 0.55;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,16 +39,12 @@ class _LearnScienceMainState extends State<LearnScienceMain> {
                   children: [
                     Expanded(
                       child: InkWell(
-                        onTap: () =>
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (_) => SolaySystemList())),
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => SolaySystemList())),
                         child: Container(
-                          height: MediaQuery
-                              .of(context)
-                              .size
-                              .width * 0.50,
+                          height: MediaQuery.of(context).size.width * boxSize,
                           child: Card(
                             elevation: 20,
                             shape: RoundedRectangleBorder(
@@ -61,10 +59,9 @@ class _LearnScienceMainState extends State<LearnScienceMain> {
                                     child: Column(
                                       children: [
                                         Image(
-                                          width: MediaQuery
-                                              .of(context)
-                                              .size
-                                              .width *
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
                                               0.3,
                                           image: AssetImage(
                                               "assets/science_solarsystemicon.png"),
@@ -74,7 +71,10 @@ class _LearnScienceMainState extends State<LearnScienceMain> {
                                           "Solar System",
                                           style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 24,
+                                            fontSize: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.05,
                                             fontWeight: FontWeight.w400,
                                           ),
                                         ),
@@ -90,18 +90,14 @@ class _LearnScienceMainState extends State<LearnScienceMain> {
                     ),
                     Expanded(
                       child: InkWell(
-                        onTap: () =>
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (_) => AtomicStructure(),
-                              ),
-                            ),
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => AtomicStructure(),
+                          ),
+                        ),
                         child: Container(
-                          height: MediaQuery
-                              .of(context)
-                              .size
-                              .width * 0.50,
+                          height: MediaQuery.of(context).size.width * boxSize,
                           child: Card(
                             elevation: 20,
                             shape: RoundedRectangleBorder(
@@ -116,10 +112,9 @@ class _LearnScienceMainState extends State<LearnScienceMain> {
                                     child: Column(
                                       children: [
                                         Image(
-                                          width: MediaQuery
-                                              .of(context)
-                                              .size
-                                              .width *
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
                                               0.3,
                                           image: AssetImage(
                                               "assets/scienceicon.png"),
@@ -129,7 +124,10 @@ class _LearnScienceMainState extends State<LearnScienceMain> {
                                           "Atomic Structure",
                                           style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 18,
+                                            fontSize: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.045,
                                             fontWeight: FontWeight.w400,
                                           ),
                                         ),
@@ -152,29 +150,24 @@ class _LearnScienceMainState extends State<LearnScienceMain> {
                   children: [
                     Expanded(
                       child: InkWell(
-                        onTap: () =>
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (_) =>
-                                new WebviewScaffold(
-                                  url:
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => new WebviewScaffold(
+                              url:
                                   "https://sciencenotes.org/wp-content/uploads/2018/02/PeriodicTableCharge-2018.png",
-                                  appCacheEnabled: true,
-                                  displayZoomControls: true,
-                                  withZoom: true,
-                                  appBar: new AppBar(
-                                    backgroundColor: Colors.orange,
-                                    title: new Text("Periodic Table"),
-                                  ),
-                                ),
+                              appCacheEnabled: true,
+                              displayZoomControls: true,
+                              withZoom: true,
+                              appBar: new AppBar(
+                                backgroundColor: Colors.orange,
+                                title: new Text("Periodic Table"),
                               ),
                             ),
+                          ),
+                        ),
                         child: Container(
-                          height: MediaQuery
-                              .of(context)
-                              .size
-                              .width * 0.50,
+                          height: MediaQuery.of(context).size.width * boxSize,
                           child: Card(
                             elevation: 20,
                             shape: RoundedRectangleBorder(
@@ -189,10 +182,9 @@ class _LearnScienceMainState extends State<LearnScienceMain> {
                                     child: Column(
                                       children: [
                                         Image(
-                                          width: MediaQuery
-                                              .of(context)
-                                              .size
-                                              .width *
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
                                               0.3,
                                           image: AssetImage(
                                               "assets/science_periodictable.png"),
@@ -202,7 +194,10 @@ class _LearnScienceMainState extends State<LearnScienceMain> {
                                           "Periodic Table",
                                           style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 24,
+                                            fontSize: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.05,
                                             fontWeight: FontWeight.w400,
                                           ),
                                         ),
@@ -218,14 +213,12 @@ class _LearnScienceMainState extends State<LearnScienceMain> {
                     ),
                     Expanded(
                       child: InkWell(
-                        onTap: () =>
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (_) =>
-                                        SolarySystemDetailScreen(
-                                          heading: "Organic Chemistry",
-                                          content:
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (_) => SolarySystemDetailScreen(
+                                      heading: "Organic Chemistry",
+                                      content:
                                           """<h2>What Is Organic Chemistry?<br>
 </h2><p>Organic chemistry is the study of the structure, properties, composition, reactions, and preparation of carbon-containing compounds, which include not only hydrocarbons but also compounds with any number of other elements, including hydrogen (most compounds contain at least one carbon–hydrogen bond), nitrogen, oxygen, halogens, phosphorus, silicon, and sulfur. This branch of chemistry was originally limited to compounds produced by living organisms but has been broadened to include human-made substances such as plastics. The range of application of organic compounds is enormous and also includes, but is not limited to, pharmaceuticals, petrochemicals, food, explosives, paints, and cosmetics.</p>            <p>&nbsp; <br>        <div class="text cq-dd-image"><h2>Where Is Organic Chemistry Used?</h2>
         
@@ -251,13 +244,10 @@ Biotechnology (“biotech” for short) is a field of applied biology that invol
 <p>The pharmaceutical industry develops, produces, and markets drugs licensed for use as medications for humans or animals. Some pharmaceutical companies deal in brand-name (i.e., has a trade name and can be produced and sold only by the company holding the patent) and/or generic (i.e., chemically equivalent, lower-cost version of a brand<i>-</i>name drug) medications and medical devices (agents that act on diseases without chemical interaction with the body). Pharmaceuticals (brand name and generic) and medical devices are subject to a large number of country-specific laws and regulations regarding patenting, testing, safety assurance, efficacy, monitoring, and marketing.</p>
 
 """,
-                                          path: "js.jpg",
-                                        ))),
+                                      path: "js.jpg",
+                                    ))),
                         child: Container(
-                          height: MediaQuery
-                              .of(context)
-                              .size
-                              .width * 0.50,
+                          height: MediaQuery.of(context).size.width * boxSize,
                           child: Card(
                             elevation: 20,
                             shape: RoundedRectangleBorder(
@@ -272,10 +262,9 @@ Biotechnology (“biotech” for short) is a field of applied biology that invol
                                     child: Column(
                                       children: [
                                         Image(
-                                          width: MediaQuery
-                                              .of(context)
-                                              .size
-                                              .width *
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
                                               0.3,
                                           image: AssetImage(
                                               "assets/science_organic.png"),
@@ -285,7 +274,10 @@ Biotechnology (“biotech” for short) is a field of applied biology that invol
                                           "Organic Chemistry",
                                           style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 18,
+                                            fontSize: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.045,
                                             fontWeight: FontWeight.w400,
                                           ),
                                         ),
@@ -308,15 +300,13 @@ Biotechnology (“biotech” for short) is a field of applied biology that invol
                   children: [
                     Expanded(
                       child: InkWell(
-                        onTap: () =>
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (_) =>
-                                    SolarySystemDetailScreen(
-                                      heading: "Inorganic",
-                                      path: "jh.jpg",
-                                      content: """<h2>What Is Inorganic Chemistry?<br>
+                        onTap: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (_) => SolarySystemDetailScreen(
+                              heading: "Inorganic",
+                              path: "jh.jpg",
+                              content: """<h2>What Is Inorganic Chemistry?<br>
 </h2>Inorganic chemistry is concerned with the properties and behavior of inorganic compounds, which include metals, minerals, and organometallic compounds. While organic chemistry  is defined as the study of carbon-containing compounds and inorganic chemistry is the study of the remaining subset of compounds other than organic compounds, there is overlap between the two fields (such as organometallic compounds, which usually contain a metal or metalloid bonded directly to carbon)        <div class="text cq-dd-image"><h2>Where Is Inorganic Chemistry Used?</h2>
   <p>Inorganic compounds are used as catalysts, pigments, coatings, surfactants, medicines, fuels, and more. They often have high melting points and specific high or low electrical conductivity properties, which make them useful for specific purposes. For example:<br>
 </p>
@@ -358,14 +348,11 @@ Inorganic chemists compare their jobs to those of materials scientists and physi
 <p>A pigment is a material that changes the color of reflected or transmitted light as the result of wavelength-selective absorption. Pigments are classified as either organic (derived from plant or animal sources) or inorganic (derived from salts or metallic oxides).</p>
 <p>Pigments are used for coloring paint, ink, plastic, fabric, cosmetics, food, and other materials. Most pigments used in manufacturing and the visual arts are dry inorganic colorants, usually ground into a fine powder. This powder is added to a vehicle (or binder), which is a relatively neutral or colorless material that suspends the pigment and gives the paint its adhesion.</p>
 """,
-                                    ),
-                              ),
                             ),
+                          ),
+                        ),
                         child: Container(
-                          height: MediaQuery
-                              .of(context)
-                              .size
-                              .width * 0.50,
+                          height: MediaQuery.of(context).size.width * boxSize,
                           child: Card(
                             elevation: 20,
                             shape: RoundedRectangleBorder(
@@ -380,10 +367,9 @@ Inorganic chemists compare their jobs to those of materials scientists and physi
                                     child: Column(
                                       children: [
                                         Image(
-                                          width: MediaQuery
-                                              .of(context)
-                                              .size
-                                              .width *
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
                                               0.3,
                                           image: AssetImage(
                                               "assets/science_inorganic.png"),
@@ -393,7 +379,10 @@ Inorganic chemists compare their jobs to those of materials scientists and physi
                                           "Inorganic Chemistry",
                                           style: TextStyle(
                                             color: Colors.white,
-                                            fontSize: 18,
+                                            fontSize: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.05,
                                             fontWeight: FontWeight.w400,
                                           ),
                                         ),

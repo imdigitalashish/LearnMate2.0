@@ -282,7 +282,7 @@ class _AuthenticationState extends State<Authentication> {
                         "Sign In To Learn Mate",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 35,
+                          fontSize: MediaQuery.of(context).size.width * 0.07,
                         ),
                       ),
                       SizedBox(
