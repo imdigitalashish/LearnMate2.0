@@ -23,3 +23,15 @@ class TodoList(models.Model):
         
 # Donate Book -> your_name, mobile, email, book_name, type[ebook, hardcopy]
 
+class DonateBooks(models.Model):
+    phone_number = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    city_name = models.CharField(max_length=100)
+    pin_code = models.CharField(max_length=100)
+    book_name = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name_plural = "Donate Books"
+
+    def __str__(self) -> str:
+        return f"{self.phone_number}:{self.name}"

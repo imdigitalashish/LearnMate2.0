@@ -1,3 +1,4 @@
+from typing import cast
 from fastapi.param_functions import File
 import pytesseract
 from PIL import Image
@@ -58,7 +59,7 @@ async def login(phone, password, response: Response):
         response.status_code = 502
         return {"result": "no such user"}
 
-
+# TODOIS LIST
 
 @app.post("/addTodo")
 async def addTodo(phone_number, todo, response: Response):
@@ -71,7 +72,7 @@ async def addTodo(phone_number, todo, response: Response):
     except:
         response.status_code = 404
 
-@app.get("/getTodos")
+@app.post("/getTodos")
 async def getTodos(phone_number):
     conn = sqlite3.connect("db.sqlite3")
     cur = conn.execute("SELECT * FROM app_todolist WHERE phone_number=?", [phone_number])
@@ -84,3 +85,58 @@ async def getTodos(phone_number):
     return todos
         
 
+@app.post("/deleteTodo")
+async def deleteTodos(pk, response: Response):
+    try:
+        conn = sqlite3.connect("db.sqlite3")
+        conn.execute("DELETE FROM app_todolist WHERE id=?", [pk])
+        conn.commit()
+        conn.close()
+        response.status_code = 200
+    except Exception as r:
+        print(r)
+        response.status_code = 404
+
+@app.post('/addBooks')
+async def addBooks(response: Response,phone, name, city, pin, book):
+    try:
+        conn = sqlite3.connect("db.sqlite3")
+        conn.execute("INSERT INTO app_donatebooks (phone_number, name, city_name, pin_code, book_name) VALUES (?,?,?,?,?)", [phone, name, city, pin, book])
+        conn.commit()
+        conn.close()
+        response.status_code = 200
+    except Exception as r:
+        print(r)
+        response.status_code = 404
+
+@app.post("/getBooks")
+async def getBooks(response: Response):
+    try:
+        conn = sqlite3.connect("db.sqlite3")
+        cur = conn.execute("SELECT * FROM app_donatebooks")
+        books = []
+        for i in cur.fetchall():
+            book = {}
+            book["id"] = i[0]
+            book["phone"] = i[1]
+            book["name"] = i[2]
+            book["city"] = i[3]
+            book["pin"] = i[4]
+            book["book"] = i[5]
+            books.append(book)
+        response.status_code = 200
+        return books
+    except Exception as e:
+        print(e)
+        response.status_code = 404
+
+@app.post("/deleteBook")
+async def deleteBook(pk, response: Response):
+    try:
+        conn = sqlite3.connect("db.sqlite3")
+        conn.execute("DELETE from app_donatebooks WHERE id=?", [pk])
+        conn.commit()
+        conn.close()
+        response.status_code = 200
+    except:
+        response.status_code = 404

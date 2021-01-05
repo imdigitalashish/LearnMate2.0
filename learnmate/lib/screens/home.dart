@@ -36,6 +36,7 @@ class _HomeState extends State<Home> {
             backgroundColor: Colors.orange[400],
             icon: Icon(Icons.book),
             label: "Study",
+
           ),
           BottomNavigationBarItem(
             backgroundColor: Colors.green[400],
