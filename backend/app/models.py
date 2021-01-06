@@ -23,6 +23,11 @@ class TodoList(models.Model):
         
 # Donate Book -> your_name, mobile, email, book_name, type[ebook, hardcopy]
 
+class WeeklyPanner(models.Model):
+    phone_number = models.CharField(max_length=100)
+    todo_item = models.CharField(max_length=100)
+    week = models.CharField(max_length=100)
+
 class DonateBooks(models.Model):
     phone_number = models.CharField(max_length=100)
     name = models.CharField(max_length=100)

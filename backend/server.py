@@ -140,3 +140,42 @@ async def deleteBook(pk, response: Response):
         response.status_code = 200
     except:
         response.status_code = 404
+
+
+
+@app.post("/addWeek")
+async def addTodo(phone_number, todo, week, response: Response):
+    try:
+        conn = sqlite3.connect("db.sqlite3")
+        conn.execute("INSERT INTO app_weeklypanner (phone_number, todo_item, week) VALUES (?,?,?)", [phone_number, todo, week])
+        conn.commit()
+        conn.close()
+        response.status_code = 200
+    except Exception as r:
+        print(r)
+        response.status_code = 404
+
+@app.post("/getWeek")
+async def getTodos(phone_number, week):
+    conn = sqlite3.connect("db.sqlite3")
+    cur = conn.execute("SELECT * FROM app_weeklypanner WHERE phone_number=? and week=?", [phone_number, week])
+    todos = []
+    for i in cur.fetchall():
+        todo = {}
+        todo["id"] = i[0]
+        todo["item"] = i[2]
+        todos.append(todo)
+    return todos
+        
+
+@app.post("/deleteWeek")
+async def deleteTodos(pk, response: Response):
+    try:
+        conn = sqlite3.connect("db.sqlite3")
+        conn.execute("DELETE FROM app_weeklypanner WHERE id=?", [pk])
+        conn.commit()
+        conn.close()
+        response.status_code = 200
+    except Exception as r:
+        print(r)
+        response.status_code = 404

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/snackbar/snack.dart';
+import 'package:learnmate/screens/home_screens/productivity.dart';
 import 'package:learnmate/screens/home_screens/study.dart';
 import 'package:learnmate/screens/home_screens/tools.dart';
 
@@ -14,11 +15,13 @@ class _HomeState extends State<Home> {
   static List<Widget> _widgetOptions = <Widget>[
     Student(),
     ToolsScreen(),
+    ProductivityScreen(),
   ];
 
   static List<Color> _colors = <Color>[
     Colors.orange[200],
     Colors.green,
+    Colors.lightBlueAccent
   ];
 
   @override

@@ -42,7 +42,9 @@ class _AuthenticationState extends State<Authentication> {
     try {
       var uriResponse = await client.post(server_url +
           "login?phone=${loginPhoneController.text.trim()}&password=${loginPasswordController.text.trim()}");
-
+      print(server_url +
+          "login?phone=${loginPhoneController.text.trim()}&password=${loginPasswordController.text.trim()}");
+      print(uriResponse.statusCode);
       if (uriResponse.statusCode == 200) {
         Map<String, dynamic> response = jsonDecode(uriResponse.body.toString());
 

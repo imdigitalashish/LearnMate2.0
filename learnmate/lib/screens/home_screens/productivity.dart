@@ -1,35 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:learnmate/screens/home_screens/tools/donateBooks.dart';
-import 'package:learnmate/screens/home_screens/tools/getbooks.dart';
-import 'package:learnmate/screens/home_screens/tools/textrecognition.dart';
-import 'package:learnmate/screens/home_screens/tools/todolist.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:learnmate/screens/home_screens/productivity/flashcards.dart';
+import 'package:learnmate/screens/home_screens/productivity/mathsquiz.dart';
+import 'package:learnmate/screens/home_screens/productivity/weeklyPlanner.dart';
 
-class ToolsScreen extends StatefulWidget {
+class ProductivityScreen extends StatefulWidget {
   @override
-  _ToolsScreenState createState() => _ToolsScreenState();
+  _ProductivityScreenState createState() => _ProductivityScreenState();
 }
 
-class _ToolsScreenState extends State<ToolsScreen> {
-  final double boxSize = 0.55;
-  final Color themeColor = Colors.green;
-  String phoneNumber = "";
-  String name;
+class _ProductivityScreenState extends State<ProductivityScreen> {
 
-  _getUserData() async {
-    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-    setState(() {
-      phoneNumber = sharedPreferences.getString("phone_number");
-      name = sharedPreferences.getString("name");
-      print(phoneNumber);
-    });
-  }
+  Color themeColor = Colors.lightBlueAccent;
+  final double boxSize = 0.55;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    _getUserData();
   }
 
   @override
@@ -41,7 +29,7 @@ class _ToolsScreenState extends State<ToolsScreen> {
             padding: const EdgeInsets.all(16.0),
             child: Center(
               child: Text(
-                "Choose a tool",
+                "Productivity Tools",
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.w400,
@@ -58,7 +46,7 @@ class _ToolsScreenState extends State<ToolsScreen> {
                     onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => TodoList(phone: phoneNumber))),
+                            builder: (_) => FlashCards())),
                     child: Container(
                       height: MediaQuery.of(context).size.width * boxSize,
                       child: Card(
@@ -78,16 +66,16 @@ class _ToolsScreenState extends State<ToolsScreen> {
                                       width: MediaQuery.of(context).size.width *
                                           0.3,
                                       image: AssetImage(
-                                          "assets/tools_todolist.png"),
+                                          "assets/productivity_cards.png"),
                                     ),
                                     SizedBox(height: 15),
                                     Text(
-                                      "Todo List",
+                                      "Flash Cards",
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize:
-                                            MediaQuery.of(context).size.width *
-                                                0.05,
+                                        MediaQuery.of(context).size.width *
+                                            0.05,
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
@@ -106,7 +94,7 @@ class _ToolsScreenState extends State<ToolsScreen> {
                     onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => DonateBooks(),
+                        builder: (_) => MathsHomeScreen(),
                       ),
                     ),
                     child: Container(
@@ -124,20 +112,20 @@ class _ToolsScreenState extends State<ToolsScreen> {
                               child: Center(
                                 child: Column(
                                   children: [
-                                    Image(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.3,
-                                      image:
-                                          AssetImage("assets/tools_donatebook.png"),
+                                    Icon(
+                                      Icons.architecture,
+                                      color: Colors.white,
+                                      size: MediaQuery.of(context).size.width *
+                                      0.3,
                                     ),
                                     SizedBox(height: 15),
                                     Text(
-                                      "Donate Books",
+                                      "Maths Quiz",
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize:
-                                            MediaQuery.of(context).size.width *
-                                                0.045,
+                                        MediaQuery.of(context).size.width *
+                                            0.045,
                                         fontWeight: FontWeight.w400,
                                       ),
                                     ),
@@ -163,7 +151,7 @@ class _ToolsScreenState extends State<ToolsScreen> {
                     onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => GetBooks(phone: phoneNumber,))),
+                            builder: (_) => WeeklyPlanner())),
                     child: Container(
                       height: MediaQuery.of(context).size.width * boxSize,
                       child: Card(
@@ -179,15 +167,15 @@ class _ToolsScreenState extends State<ToolsScreen> {
                               child: Center(
                                 child: Column(
                                   children: [
-                                    Image(
-                                      width: MediaQuery.of(context).size.width *
-                                          0.34,
-                                      image: AssetImage(
-                                          "assets/tools_getbooks.png"),
+                                    Icon(
+                                      Icons.event,
+                                      size: MediaQuery.of(context).size.width *
+                                          0.3,
+                                      color: Colors.white,
                                     ),
                                     SizedBox(height: 15),
                                     Text(
-                                      "Get Books",
+                                      "Weekly Planner",
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize:
@@ -208,12 +196,12 @@ class _ToolsScreenState extends State<ToolsScreen> {
                 ),
                 Expanded(
                   child: InkWell(
-                    onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => FirebaseVIsionText(name: name,),
-                      ),
-                    ),
+                    // onTap: () => Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (_) => FirebaseVIsionText(name: name,),
+                    //   ),
+                    // ),
                     child: Container(
                       height: MediaQuery.of(context).size.width * boxSize,
                       child: Card(
@@ -260,6 +248,148 @@ class _ToolsScreenState extends State<ToolsScreen> {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+
+class MathsHomeScreen extends StatefulWidget {
+  @override
+  _MathsHomeScreenState createState() => _MathsHomeScreenState();
+}
+
+class _MathsHomeScreenState extends State<MathsHomeScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 12.0, right: 12.0, top: 26),
+              child: InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => DifficultyForAddition(),
+                  ),
+                ),
+                child: Card(
+                  elevation: 20,
+                  color: Colors.blue,
+                  child: Container(
+                    padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.width * 0.05,
+                        bottom: MediaQuery.of(context).size.width * 0.05,
+                        left: MediaQuery.of(context).size.width * 0.10),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.add,
+                          size: MediaQuery.of(context).size.width * 0.20,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.10,
+                        ),
+                        Text(
+                          "Addition",
+                          style: TextStyle(
+                            fontSize: 32,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 12.0, right: 12.0, top: 26),
+              child: InkWell(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => DifficultyForSubstraction(),
+                  ),
+                ),
+                child: Card(
+                  elevation: 20,
+                  color: Colors.blue,
+                  child: Container(
+                    padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.width * 0.05,
+                        bottom: MediaQuery.of(context).size.width * 0.05,
+                        left: MediaQuery.of(context).size.width * 0.10),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.remove,
+                          size: MediaQuery.of(context).size.width * 0.20,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.10,
+                        ),
+                        Text(
+                          "Subtraction",
+                          style: TextStyle(
+                            fontSize: 32,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 12.0, right: 12.0, top: 26),
+              child: InkWell(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => DifficultyForMulti(),
+                    ),
+                  ),
+                child: Card(
+                  elevation: 20,
+                  color: Colors.blue,
+                  child: Container(
+                    padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.width * 0.05,
+                        bottom: MediaQuery.of(context).size.width * 0.05,
+                        left: MediaQuery.of(context).size.width * 0.10),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.clear,
+                          size: MediaQuery.of(context).size.width * 0.20,
+                          color: Colors.white,
+                        ),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width * 0.10,
+                        ),
+                        Text(
+                          "Multiplication",
+                          style: TextStyle(
+                            fontSize: 32,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
