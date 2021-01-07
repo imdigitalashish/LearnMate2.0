@@ -279,7 +279,7 @@ class _DifficultyForSubtractionState extends State<DifficultyForSubstraction> {
                 onTap: () => Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => AdditionQuiz(maxInt: 12,timer: 10, level: "Easy",),
+                    builder: (_) => SubstractionQuiz(maxInt: 12,timer: 10, level: "Easy",),
                   ),
                 ),
                 child: Card(
@@ -309,7 +309,7 @@ class _DifficultyForSubtractionState extends State<DifficultyForSubstraction> {
                 onTap: () => Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => AdditionQuiz(maxInt: 40,timer: 16, level: "Medium",),
+                    builder: (_) => SubstractionQuiz(maxInt: 40,timer: 16, level: "Medium",),
                   ),
                 ),
                 child: Card(

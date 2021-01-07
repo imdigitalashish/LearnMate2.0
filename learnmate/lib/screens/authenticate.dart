@@ -54,6 +54,9 @@ class _AuthenticationState extends State<Authentication> {
         shared.setString("password", response['password']);
         shared.setString("phone_number", response['phone_number']);
         shared.setInt("state", 1);
+        shared.setStringList("termCards", []);
+        shared.setStringList("valueCards", []);
+        shared.setStringList("wordsList", []);
         Navigator.of(context).popUntil((route) => route.isFirst);
 
         Navigator.pushReplacement(
@@ -177,7 +180,9 @@ class _AuthenticationState extends State<Authentication> {
         shared.setString("username", registerUsernameController.text.trim());
         shared.setString("password", registerPasswordController.text.trim());
         shared.setString("phone_number", registerPhoneController.text.trim());
-
+        shared.setStringList("termCards", []);
+        shared.setStringList("valueCards", []);
+        shared.setStringList("wordsList", []);
         shared.setInt("state", 1);
         Navigator.of(context).popUntil((route) => route.isFirst);
 

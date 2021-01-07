@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/snackbar/snack.dart';
+import 'package:learnmate/screens/home_screens/casual.dart';
 import 'package:learnmate/screens/home_screens/productivity.dart';
+import 'package:learnmate/screens/home_screens/profile.dart';
 import 'package:learnmate/screens/home_screens/study.dart';
 import 'package:learnmate/screens/home_screens/tools.dart';
+
 
 class Home extends StatefulWidget {
   @override
@@ -16,12 +19,16 @@ class _HomeState extends State<Home> {
     Student(),
     ToolsScreen(),
     ProductivityScreen(),
+    CasualMainScreen(),
+    Profile(),
   ];
 
   static List<Color> _colors = <Color>[
     Colors.orange[200],
     Colors.green,
-    Colors.lightBlueAccent
+    Colors.lightBlueAccent,
+    Colors.red[200],
+    Colors.blue,
   ];
 
   @override

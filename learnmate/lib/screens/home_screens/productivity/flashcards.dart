@@ -207,25 +207,26 @@ class _FlashCardsStateState extends State<FlashCardsState> {
                 });
               } else {
                 print("YOU CAN'T CHANGE");
+                Get.snackbar(
+                  "Failed",
+                  "There is no user with that phone number",
+                  snackPosition: SnackPosition.TOP,
+                  maxWidth: 400,
+                  duration: Duration(seconds: 5),
+                  titleText: Text(
+                    "Message",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  messageText: Text(
+                    "You are at end of the cards",
+                    style: TextStyle(fontSize: 25),
+                  ),
+                );
               }
               // if (position++ > termCards.length - 1) {
-              //   Get.snackbar(
-              //     "Failed",
-              //     "There is no user with that phone number",
-              //     snackPosition: SnackPosition.TOP,
-              //     maxWidth: 400,
-              //     duration: Duration(seconds: 5),
-              //     titleText: Text(
-              //       "Message",
-              //       style: TextStyle(
-              //         fontWeight: FontWeight.bold,
-              //       ),
-              //     ),
-              //     messageText: Text(
-              //       "You are at end of the cards",
-              //       style: TextStyle(fontSize: 25),
-              //     ),
-              //   );
+
               // } else {
               //   print("CHANGED");
               //   position++;
