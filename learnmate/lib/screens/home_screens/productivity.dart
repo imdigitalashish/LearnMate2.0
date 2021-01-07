@@ -3,6 +3,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:learnmate/screens/home_screens/productivity/flashcards.dart';
 import 'package:learnmate/screens/home_screens/productivity/mathsquiz.dart';
 import 'package:learnmate/screens/home_screens/productivity/weeklyPlanner.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ProductivityScreen extends StatefulWidget {
   @override
@@ -14,10 +15,19 @@ class _ProductivityScreenState extends State<ProductivityScreen> {
   Color themeColor = Colors.lightBlueAccent;
   final double boxSize = 0.55;
 
+  String phone;
+
+
+  _getStatus() async {
+    SharedPreferences shared = await SharedPreferences.getInstance();
+    phone = shared.getString("phone_number");
+  }
+
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    _getStatus();
   }
 
   @override
@@ -151,7 +161,7 @@ class _ProductivityScreenState extends State<ProductivityScreen> {
                     onTap: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (_) => WeeklyPlanner())),
+                            builder: (_) => WeeklyPlanner(phone: phone))),
                     child: Container(
                       height: MediaQuery.of(context).size.width * boxSize,
                       child: Card(

@@ -375,6 +375,7 @@ class _AuthenticationState extends State<Authentication> {
                                       height: 10,
                                     ),
                                     TextField(
+                                      keyboardType: TextInputType.phone,
                                       controller: registerPhoneController,
                                       decoration: InputDecoration(
                                         labelText: "Enter your Phone",
