@@ -228,15 +228,15 @@ class _ProductivityScreenState extends State<ProductivityScreen> {
                               child: Center(
                                 child: Column(
                                   children: [
-                                    Image(
-                                      width: MediaQuery.of(context).size.width *
+                                    Icon(
+                                      Icons.camera,
+                                      size: MediaQuery.of(context).size.width *
                                           0.3,
-                                      image:
-                                      AssetImage("assets/tools_robot.png"),
+                                      color:Colors.white,
                                     ),
                                     SizedBox(height: 15),
                                     Text(
-                                      "Student Help Bot",
+                                      "Text Recogniser",
                                       style: TextStyle(
                                         color: Colors.white,
                                         fontSize:

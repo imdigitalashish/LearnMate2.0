@@ -23,7 +23,7 @@ async def create_upload_file(file: UploadFile = File(...)):
         auth=(api_key, api_secret),
         files={'image': open(file.filename, "rb")})
     text = ""
-    for i in range(0, len((response.json()["result"]["text"])) - 1):
+    for i in range(0, len((response.json()["result"]["text"]))):
         text += response.json()["result"]["text"][i]['data'] + "\n"
     print(text)
     os.remove(file.filename)
