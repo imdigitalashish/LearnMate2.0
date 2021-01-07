@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:learnmate/screens/home_screens/productivity/flashcards.dart';
+import 'package:learnmate/screens/home_screens/productivity/imageRecognition.dart';
 import 'package:learnmate/screens/home_screens/productivity/mathsquiz.dart';
 import 'package:learnmate/screens/home_screens/productivity/weeklyPlanner.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -206,12 +207,12 @@ class _ProductivityScreenState extends State<ProductivityScreen> {
                 ),
                 Expanded(
                   child: InkWell(
-                    // onTap: () => Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (_) => FirebaseVIsionText(name: name,),
-                    //   ),
-                    // ),
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => WhatIsIt(),
+                      ),
+                    ),
                     child: Container(
                       height: MediaQuery.of(context).size.width * boxSize,
                       child: Card(

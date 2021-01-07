@@ -14,8 +14,14 @@ class _WhatIsItState extends State<WhatIsIt> {
 
   _getImageDetails() async {
     final picker = ImagePicker();
-    final file = picker.getImage(source: ImageSource.gallery);
-    dio.Response response = await dio.Dio().get("https://api.imagga.com/v2/tags", );
+    final file = await picker.getImage(source: ImageSource.gallery);
+    dio.Dio dioD = dio.Dio();
+    dioD.options.headers["api_key"] = api_key;
+    dioD.options.headers["api_secret"] = api_secret;
+    dioD.options.headers["files"] = {"image": file.readAsBytes()};
+    dio.Response response = await dioD.post("https://api.imagga.com/v2/tags");
+    print(response.data.toString());
+
   }
 
   @override

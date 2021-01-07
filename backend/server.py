@@ -4,18 +4,38 @@ import pytesseract
 from PIL import Image
 from fastapi import FastAPI, UploadFile, Response
 import sqlite3
+import requests
+import os
 app = FastAPI()
+
+api_key = 'acc_abe59a7e9771da3'
+api_secret = '8119b9b1ab9554093d1bea1e181d0b13'
+
 
 @app.post('/uploadFile')
 async def create_upload_file(file: UploadFile = File(...)):
     text = await file.read()
-    file = open(file.filename, "wb+")    
-    file.write(text)
-    ocr = pytesseract.image_to_string(Image.open(file))
-    print(ocr)
-    # ocr = pytesseract.image_to_string(file)
-
-    file.close()
+    files = open(file.filename, "wb+")
+    files.write(text)
+    files.close()
+    response = requests.post(
+        'https://api.imagga.com/v2/text',
+        auth=(api_key, api_secret),
+        files={'image': open(file.filename, "rb")})
+    text = ""
+    for i in range(0, len((response.json()["result"]["text"])) - 1):
+        text += response.json()["result"]["text"][i]['data'] + "\n"
+    print(text)
+    os.remove(file.filename)
+    return text
+    # text = await file.read()
+    # file = open(file.filename, "wb+")
+    # file.write(text)
+    # ocr = pytesseract.image_to_string(Image.open(file))
+    # print(ocr)
+    # # ocr = pytesseract.image_to_string(file)
+    #
+    # file.close()
 
 
 @app.post("/registerUser")
@@ -24,7 +44,8 @@ async def registerUser(username, phone, password, name, response: Response):
         conn = sqlite3.connect("db.sqlite3")
         user = conn.execute("SELECT * FROM app_users WHERE phone_number=?", [phone])
         if user.fetchall() == []:
-            conn.execute("INSERT INTO app_users (phone_number, username, password, name) VALUES (?,?,?,?)", [phone, username, password, name])
+            conn.execute("INSERT INTO app_users (phone_number, username, password, name) VALUES (?,?,?,?)",
+                         [phone, username, password, name])
             conn.commit()
             conn.close()
             response.status_code = 200
@@ -32,6 +53,7 @@ async def registerUser(username, phone, password, name, response: Response):
             response.status_code = 404
     except:
         response.status_code = 502
+
 
 @app.post("/login")
 async def login(phone, password, response: Response):
@@ -59,6 +81,7 @@ async def login(phone, password, response: Response):
         response.status_code = 502
         return {"result": "no such user"}
 
+
 # TODOIS LIST
 
 @app.post("/addTodo")
@@ -72,6 +95,7 @@ async def addTodo(phone_number, todo, response: Response):
     except:
         response.status_code = 404
 
+
 @app.post("/getTodos")
 async def getTodos(phone_number):
     conn = sqlite3.connect("db.sqlite3")
@@ -83,7 +107,7 @@ async def getTodos(phone_number):
         todo["item"] = i[2]
         todos.append(todo)
     return todos
-        
+
 
 @app.post("/deleteTodo")
 async def deleteTodos(pk, response: Response):
@@ -97,17 +121,21 @@ async def deleteTodos(pk, response: Response):
         print(r)
         response.status_code = 404
 
+
 @app.post('/addBooks')
-async def addBooks(response: Response,phone, name, city, pin, book):
+async def addBooks(response: Response, phone, name, city, pin, book):
     try:
         conn = sqlite3.connect("db.sqlite3")
-        conn.execute("INSERT INTO app_donatebooks (phone_number, name, city_name, pin_code, book_name) VALUES (?,?,?,?,?)", [phone, name, city, pin, book])
+        conn.execute(
+            "INSERT INTO app_donatebooks (phone_number, name, city_name, pin_code, book_name) VALUES (?,?,?,?,?)",
+            [phone, name, city, pin, book])
         conn.commit()
         conn.close()
         response.status_code = 200
     except Exception as r:
         print(r)
         response.status_code = 404
+
 
 @app.post("/getBooks")
 async def getBooks(response: Response):
@@ -130,6 +158,7 @@ async def getBooks(response: Response):
         print(e)
         response.status_code = 404
 
+
 @app.post("/deleteBook")
 async def deleteBook(pk, response: Response):
     try:
@@ -142,18 +171,19 @@ async def deleteBook(pk, response: Response):
         response.status_code = 404
 
 
-
 @app.post("/addWeek")
 async def addTodo(phone_number, todo, week, response: Response):
     try:
         conn = sqlite3.connect("db.sqlite3")
-        conn.execute("INSERT INTO app_weeklypanner (phone_number, todo_item, week) VALUES (?,?,?)", [phone_number, todo, week])
+        conn.execute("INSERT INTO app_weeklypanner (phone_number, todo_item, week) VALUES (?,?,?)",
+                     [phone_number, todo, week])
         conn.commit()
         conn.close()
         response.status_code = 200
     except Exception as r:
         print(r)
         response.status_code = 404
+
 
 @app.post("/getWeek")
 async def getTodos(phone_number, week):
@@ -166,7 +196,7 @@ async def getTodos(phone_number, week):
         todo["item"] = i[2]
         todos.append(todo)
     return todos
-        
+
 
 @app.post("/deleteWeek")
 async def deleteTodos(pk, response: Response):
