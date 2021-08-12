@@ -6,7 +6,17 @@ from fastapi import FastAPI, UploadFile, Response
 import sqlite3
 import requests
 import os
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
 
 api_key = 'acc_abe59a7e9771da3'
 api_secret = '8119b9b1ab9554093d1bea1e181d0b13'

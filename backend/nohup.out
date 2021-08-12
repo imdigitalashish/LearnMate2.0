@@ -1,0 +1,355 @@
+[2021-08-11 07:04:59 +0000] [12205] [INFO] Starting gunicorn 20.1.0
+[2021-08-11 07:04:59 +0000] [12205] [INFO] Listening at: http://0.0.0.0:9092 (12205)
+[2021-08-11 07:04:59 +0000] [12205] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2021-08-11 07:04:59 +0000] [12208] [INFO] Booting worker with pid: 12208
+[2021-08-11 07:04:59 +0000] [12209] [INFO] Booting worker with pid: 12209
+[2021-08-11 07:04:59 +0000] [12210] [INFO] Booting worker with pid: 12210
+[2021-08-11 07:04:59 +0000] [12211] [INFO] Booting worker with pid: 12211
+[2021-08-11 07:04:59 +0000] [12212] [INFO] Booting worker with pid: 12212
+[2021-08-11 07:05:00 +0000] [12208] [INFO] Started server process [12208]
+[2021-08-11 07:05:00 +0000] [12208] [INFO] Waiting for application startup.
+[2021-08-11 07:05:00 +0000] [12208] [INFO] Application startup complete.
+[2021-08-11 07:05:00 +0000] [12209] [INFO] Started server process [12209]
+[2021-08-11 07:05:00 +0000] [12209] [INFO] Waiting for application startup.
+[2021-08-11 07:05:00 +0000] [12209] [INFO] Application startup complete.
+[2021-08-11 07:05:00 +0000] [12210] [INFO] Started server process [12210]
+[2021-08-11 07:05:00 +0000] [12210] [INFO] Waiting for application startup.
+[2021-08-11 07:05:00 +0000] [12210] [INFO] Application startup complete.
+[2021-08-11 07:05:00 +0000] [12212] [INFO] Started server process [12212]
+[2021-08-11 07:05:00 +0000] [12212] [INFO] Waiting for application startup.
+[2021-08-11 07:05:00 +0000] [12212] [INFO] Application startup complete.
+[2021-08-11 07:05:00 +0000] [12211] [INFO] Started server process [12211]
+[2021-08-11 07:05:00 +0000] [12211] [INFO] Waiting for application startup.
+[2021-08-11 07:05:00 +0000] [12211] [INFO] Application startup complete.
+[2021-08-11 07:05:03 +0000] [12205] [INFO] Handling signal: hup
+[2021-08-11 07:05:03 +0000] [12205] [INFO] Hang up: Master
+[2021-08-11 07:05:03 +0000] [12205] [WARNING] Worker with pid 12208 was terminated due to signal 1
+[2021-08-11 07:05:03 +0000] [12205] [WARNING] Worker with pid 12209 was terminated due to signal 1
+[2021-08-11 07:05:03 +0000] [12205] [WARNING] Worker with pid 12210 was terminated due to signal 1
+[2021-08-11 07:05:03 +0000] [12205] [WARNING] Worker with pid 12211 was terminated due to signal 1
+[2021-08-11 07:05:03 +0000] [12205] [WARNING] Worker with pid 12212 was terminated due to signal 1
+[2021-08-11 07:05:03 +0000] [12216] [INFO] Booting worker with pid: 12216
+[2021-08-11 07:05:03 +0000] [12215] [INFO] Booting worker with pid: 12215
+[2021-08-11 07:05:03 +0000] [12217] [INFO] Booting worker with pid: 12217
+[2021-08-11 07:05:03 +0000] [12218] [INFO] Booting worker with pid: 12218
+[2021-08-11 07:05:03 +0000] [12219] [INFO] Booting worker with pid: 12219
+[2021-08-11 07:05:04 +0000] [12217] [INFO] Started server process [12217]
+[2021-08-11 07:05:04 +0000] [12217] [INFO] Waiting for application startup.
+[2021-08-11 07:05:04 +0000] [12217] [INFO] Application startup complete.
+[2021-08-11 07:05:04 +0000] [12218] [INFO] Started server process [12218]
+[2021-08-11 07:05:04 +0000] [12218] [INFO] Waiting for application startup.
+[2021-08-11 07:05:04 +0000] [12218] [INFO] Application startup complete.
+[2021-08-11 07:05:04 +0000] [12219] [INFO] Started server process [12219]
+[2021-08-11 07:05:04 +0000] [12219] [INFO] Waiting for application startup.
+[2021-08-11 07:05:04 +0000] [12216] [INFO] Started server process [12216]
+[2021-08-11 07:05:04 +0000] [12216] [INFO] Waiting for application startup.
+[2021-08-11 07:05:04 +0000] [12216] [INFO] Application startup complete.
+[2021-08-11 07:05:04 +0000] [12215] [INFO] Started server process [12215]
+[2021-08-11 07:05:04 +0000] [12215] [INFO] Waiting for application startup.
+[2021-08-11 07:05:04 +0000] [12215] [INFO] Application startup complete.
+[2021-08-11 07:05:04 +0000] [12219] [INFO] Application startup complete.
+[2021-08-11 14:39:29 +0000] [12215] [WARNING] Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/uvicorn/protocols/http/h11_impl.py", line 136, in handle_events
+    event = self.conn.next_event()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_connection.py", line 443, in next_event
+    exc._reraise_as_remote_protocol_error()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_util.py", line 76, in _reraise_as_remote_protocol_error
+    raise self
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_connection.py", line 425, in next_event
+    event = self._extract_next_receive_event()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_connection.py", line 367, in _extract_next_receive_event
+    event = self._reader(self._receive_buffer)
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_readers.py", line 68, in maybe_read_from_IDLE_client
+    raise LocalProtocolError("illegal request line")
+h11._util.RemoteProtocolError: illegal request line
+[2021-08-11 14:39:31 +0000] [12215] [WARNING] Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/uvicorn/protocols/http/h11_impl.py", line 136, in handle_events
+    event = self.conn.next_event()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_connection.py", line 443, in next_event
+    exc._reraise_as_remote_protocol_error()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_util.py", line 76, in _reraise_as_remote_protocol_error
+    raise self
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_connection.py", line 425, in next_event
+    event = self._extract_next_receive_event()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_connection.py", line 367, in _extract_next_receive_event
+    event = self._reader(self._receive_buffer)
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_readers.py", line 68, in maybe_read_from_IDLE_client
+    raise LocalProtocolError("illegal request line")
+h11._util.RemoteProtocolError: illegal request line
+[2021-08-11 17:33:30 +0000] [12218] [WARNING] Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/uvicorn/protocols/http/h11_impl.py", line 136, in handle_events
+    event = self.conn.next_event()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_connection.py", line 443, in next_event
+    exc._reraise_as_remote_protocol_error()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_util.py", line 76, in _reraise_as_remote_protocol_error
+    raise self
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_connection.py", line 425, in next_event
+    event = self._extract_next_receive_event()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_connection.py", line 367, in _extract_next_receive_event
+    event = self._reader(self._receive_buffer)
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_readers.py", line 68, in maybe_read_from_IDLE_client
+    raise LocalProtocolError("illegal request line")
+h11._util.RemoteProtocolError: illegal request line
+[2021-08-11 17:33:32 +0000] [12218] [WARNING] Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/uvicorn/protocols/http/h11_impl.py", line 136, in handle_events
+    event = self.conn.next_event()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_connection.py", line 443, in next_event
+    exc._reraise_as_remote_protocol_error()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_util.py", line 76, in _reraise_as_remote_protocol_error
+    raise self
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_connection.py", line 425, in next_event
+    event = self._extract_next_receive_event()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_connection.py", line 367, in _extract_next_receive_event
+    event = self._reader(self._receive_buffer)
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_readers.py", line 68, in maybe_read_from_IDLE_client
+    raise LocalProtocolError("illegal request line")
+h11._util.RemoteProtocolError: illegal request line
+[2021-08-12 01:18:06 +0000] [12219] [WARNING] Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/uvicorn/protocols/http/h11_impl.py", line 136, in handle_events
+    event = self.conn.next_event()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_connection.py", line 443, in next_event
+    exc._reraise_as_remote_protocol_error()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_util.py", line 76, in _reraise_as_remote_protocol_error
+    raise self
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_connection.py", line 425, in next_event
+    event = self._extract_next_receive_event()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_connection.py", line 367, in _extract_next_receive_event
+    event = self._reader(self._receive_buffer)
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_readers.py", line 68, in maybe_read_from_IDLE_client
+    raise LocalProtocolError("illegal request line")
+h11._util.RemoteProtocolError: illegal request line
+[2021-08-12 01:18:08 +0000] [12218] [WARNING] Invalid HTTP request received.
+Traceback (most recent call last):
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/uvicorn/protocols/http/h11_impl.py", line 136, in handle_events
+    event = self.conn.next_event()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_connection.py", line 443, in next_event
+    exc._reraise_as_remote_protocol_error()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_util.py", line 76, in _reraise_as_remote_protocol_error
+    raise self
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_connection.py", line 425, in next_event
+    event = self._extract_next_receive_event()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_connection.py", line 367, in _extract_next_receive_event
+    event = self._reader(self._receive_buffer)
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/h11/_readers.py", line 68, in maybe_read_from_IDLE_client
+    raise LocalProtocolError("illegal request line")
+h11._util.RemoteProtocolError: illegal request line
+[2021-08-12 09:33:04 +0000] [12205] [INFO] Handling signal: term
+[2021-08-12 09:33:04 +0000] [12215] [INFO] Shutting down
+[2021-08-12 09:33:04 +0000] [12216] [INFO] Shutting down
+[2021-08-12 09:33:04 +0000] [12217] [INFO] Shutting down
+[2021-08-12 09:33:04 +0000] [12218] [INFO] Shutting down
+[2021-08-12 09:33:04 +0000] [12219] [INFO] Shutting down
+[2021-08-12 09:33:04 +0000] [12215] [INFO] Finished server process [12215]
+[2021-08-12 09:33:04 +0000] [12215] [INFO] Worker exiting (pid: 12215)
+[2021-08-12 09:33:04 +0000] [12217] [INFO] Finished server process [12217]
+[2021-08-12 09:33:04 +0000] [12217] [INFO] Worker exiting (pid: 12217)
+[2021-08-12 09:33:04 +0000] [12218] [INFO] Finished server process [12218]
+[2021-08-12 09:33:04 +0000] [12218] [INFO] Worker exiting (pid: 12218)
+Note :
+Those equations which cannot be balanced by this method, can be balanced by other methods
+like ion-electron method, oxidation number method etc. which will be discussed in higher classes.
+
+[2021-08-12 09:33:04 +0000] [12219] [INFO] Finished server process [12219]
+[2021-08-12 09:33:04 +0000] [12219] [INFO] Worker exiting (pid: 12219)
+[2021-08-12 09:33:04 +0000] [12216] [INFO] Finished server process [12216]
+[2021-08-12 09:33:04 +0000] [12216] [INFO] Worker exiting (pid: 12216)
+[2021-08-12 09:33:04 +0000] [12205] [INFO] Shutting down: Master
+[2021-08-12 10:30:19 +0000] [4315] [INFO] Starting gunicorn 20.1.0
+[2021-08-12 10:30:19 +0000] [4315] [INFO] Listening at: http://0.0.0.0:9092 (4315)
+[2021-08-12 10:30:19 +0000] [4315] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2021-08-12 10:30:19 +0000] [4318] [INFO] Booting worker with pid: 4318
+[2021-08-12 10:30:19 +0000] [4319] [INFO] Booting worker with pid: 4319
+[2021-08-12 10:30:19 +0000] [4320] [INFO] Booting worker with pid: 4320
+[2021-08-12 10:30:19 +0000] [4321] [INFO] Booting worker with pid: 4321
+[2021-08-12 10:30:19 +0000] [4322] [INFO] Booting worker with pid: 4322
+[2021-08-12 10:30:20 +0000] [4318] [INFO] Started server process [4318]
+[2021-08-12 10:30:20 +0000] [4318] [INFO] Waiting for application startup.
+[2021-08-12 10:30:20 +0000] [4318] [INFO] Application startup complete.
+[2021-08-12 10:30:20 +0000] [4319] [INFO] Started server process [4319]
+[2021-08-12 10:30:20 +0000] [4319] [INFO] Waiting for application startup.
+[2021-08-12 10:30:20 +0000] [4319] [INFO] Application startup complete.
+[2021-08-12 10:30:20 +0000] [4320] [INFO] Started server process [4320]
+[2021-08-12 10:30:20 +0000] [4320] [INFO] Waiting for application startup.
+[2021-08-12 10:30:20 +0000] [4320] [INFO] Application startup complete.
+[2021-08-12 10:30:20 +0000] [4321] [INFO] Started server process [4321]
+[2021-08-12 10:30:20 +0000] [4321] [INFO] Waiting for application startup.
+[2021-08-12 10:30:20 +0000] [4321] [INFO] Application startup complete.
+[2021-08-12 10:30:20 +0000] [4322] [INFO] Started server process [4322]
+[2021-08-12 10:30:20 +0000] [4322] [INFO] Waiting for application startup.
+[2021-08-12 10:30:20 +0000] [4322] [INFO] Application startup complete.
+[2021-08-12 10:31:58 +0000] [4315] [INFO] Handling signal: hup
+[2021-08-12 10:31:58 +0000] [4315] [INFO] Hang up: Master
+[2021-08-12 10:31:58 +0000] [4315] [WARNING] Worker with pid 4318 was terminated due to signal 1
+[2021-08-12 10:31:58 +0000] [4315] [WARNING] Worker with pid 4319 was terminated due to signal 1
+[2021-08-12 10:31:58 +0000] [4315] [WARNING] Worker with pid 4320 was terminated due to signal 1
+[2021-08-12 10:31:58 +0000] [4315] [WARNING] Worker with pid 4321 was terminated due to signal 1
+[2021-08-12 10:31:58 +0000] [4315] [WARNING] Worker with pid 4322 was terminated due to signal 1
+[2021-08-12 10:31:58 +0000] [4354] [INFO] Booting worker with pid: 4354
+[2021-08-12 10:31:58 +0000] [4355] [INFO] Booting worker with pid: 4355
+[2021-08-12 10:31:58 +0000] [4356] [INFO] Booting worker with pid: 4356
+[2021-08-12 10:31:58 +0000] [4357] [INFO] Booting worker with pid: 4357
+[2021-08-12 10:31:58 +0000] [4358] [INFO] Booting worker with pid: 4358
+[2021-08-12 10:31:59 +0000] [4356] [INFO] Started server process [4356]
+[2021-08-12 10:31:59 +0000] [4356] [INFO] Waiting for application startup.
+[2021-08-12 10:31:59 +0000] [4356] [INFO] Application startup complete.
+[2021-08-12 10:31:59 +0000] [4354] [INFO] Started server process [4354]
+[2021-08-12 10:31:59 +0000] [4354] [INFO] Waiting for application startup.
+[2021-08-12 10:31:59 +0000] [4354] [INFO] Application startup complete.
+[2021-08-12 10:31:59 +0000] [4355] [INFO] Started server process [4355]
+[2021-08-12 10:31:59 +0000] [4355] [INFO] Waiting for application startup.
+[2021-08-12 10:31:59 +0000] [4355] [INFO] Application startup complete.
+[2021-08-12 10:31:59 +0000] [4357] [INFO] Started server process [4357]
+[2021-08-12 10:31:59 +0000] [4357] [INFO] Waiting for application startup.
+[2021-08-12 10:31:59 +0000] [4357] [INFO] Application startup complete.
+[2021-08-12 10:31:59 +0000] [4358] [INFO] Started server process [4358]
+[2021-08-12 10:31:59 +0000] [4358] [INFO] Waiting for application startup.
+[2021-08-12 10:31:59 +0000] [4358] [INFO] Application startup complete.
+[2021-08-12 10:52:03 +0000] [4315] [INFO] Handling signal: term
+[2021-08-12 10:52:03 +0000] [4354] [INFO] Shutting down
+[2021-08-12 10:52:03 +0000] [4355] [INFO] Shutting down
+[2021-08-12 10:52:03 +0000] [4356] [INFO] Shutting down
+[2021-08-12 10:52:03 +0000] [4357] [INFO] Shutting down
+[2021-08-12 10:52:03 +0000] [4358] [INFO] Shutting down
+[2021-08-12 10:52:03 +0000] [4354] [INFO] Finished server process [4354]
+[2021-08-12 10:52:03 +0000] [4354] [INFO] Worker exiting (pid: 4354)
+[2021-08-12 10:52:03 +0000] [4357] [INFO] Finished server process [4357]
+[2021-08-12 10:52:03 +0000] [4357] [INFO] Worker exiting (pid: 4357)
+[2021-08-12 10:52:03 +0000] [4355] [INFO] Finished server process [4355]
+[2021-08-12 10:52:03 +0000] [4355] [INFO] Worker exiting (pid: 4355)
+False
+False
+[2021-08-12 10:52:03 +0000] [4358] [INFO] Finished server process [4358]
+[2021-08-12 10:52:03 +0000] [4358] [INFO] Worker exiting (pid: 4358)
+False
+[2021-08-12 10:52:03 +0000] [4356] [INFO] Finished server process [4356]
+[2021-08-12 10:52:03 +0000] [4356] [INFO] Worker exiting (pid: 4356)
+[2021-08-12 10:52:04 +0000] [4315] [INFO] Shutting down: Master
+[2021-08-12 10:52:29 +0000] [4915] [INFO] Starting gunicorn 20.1.0
+[2021-08-12 10:52:29 +0000] [4915] [INFO] Listening at: http://0.0.0.0:9092 (4915)
+[2021-08-12 10:52:29 +0000] [4915] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2021-08-12 10:52:29 +0000] [4918] [INFO] Booting worker with pid: 4918
+[2021-08-12 10:52:29 +0000] [4919] [INFO] Booting worker with pid: 4919
+[2021-08-12 10:52:29 +0000] [4920] [INFO] Booting worker with pid: 4920
+[2021-08-12 10:52:29 +0000] [4921] [INFO] Booting worker with pid: 4921
+[2021-08-12 10:52:29 +0000] [4922] [INFO] Booting worker with pid: 4922
+[2021-08-12 10:52:30 +0000] [4918] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/uvicorn/workers.py", line 64, in init_process
+    super(UvicornWorker, self).init_process()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib64/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ec2-user/LearnMate2.0/backend/server.py", line 12, in <module>
+    CORSMiddleware,
+NameError: name 'CORSMiddleware' is not defined
+[2021-08-12 10:52:30 +0000] [4918] [INFO] Worker exiting (pid: 4918)
+[2021-08-12 10:52:30 +0000] [4919] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/gunicorn/arbiter.py", line 589, in spawn_worker
+    worker.init_process()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/uvicorn/workers.py", line 64, in init_process
+    super(UvicornWorker, self).init_process()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/gunicorn/workers/base.py", line 134, in init_process
+    self.load_wsgi()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+    self.wsgi = self.app.wsgi()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/gunicorn/app/base.py", line 67, in wsgi
+    self.callable = self.load()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+    return self.load_wsgiapp()
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+    return util.import_app(self.app_uri)
+  File "/home/ec2-user/LearnMate2.0/backend/venv/lib64/python3.7/site-packages/gunicorn/util.py", line 359, in import_app
+    mod = importlib.import_module(module)
+  File "/usr/lib64/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/ec2-user/LearnMate2.0/backend/server.py", line 12, in <module>
+    CORSMiddleware,
+NameError: name 'CORSMiddleware' is not defined
+[2021-08-12 10:52:30 +0000] [4919] [INFO] Worker exiting (pid: 4919)
+[2021-08-12 10:52:30 +0000] [4915] [WARNING] Worker with pid 4919 was terminated due to signal 15
+[2021-08-12 10:52:30 +0000] [4915] [WARNING] Worker with pid 4921 was terminated due to signal 15
+[2021-08-12 10:52:30 +0000] [4915] [WARNING] Worker with pid 4922 was terminated due to signal 15
+[2021-08-12 10:52:30 +0000] [4915] [WARNING] Worker with pid 4920 was terminated due to signal 15
+[2021-08-12 10:52:30 +0000] [4915] [INFO] Shutting down: Master
+[2021-08-12 10:52:30 +0000] [4915] [INFO] Reason: Worker failed to boot.
+[2021-08-12 10:54:35 +0000] [4979] [INFO] Starting gunicorn 20.1.0
+[2021-08-12 10:54:35 +0000] [4979] [INFO] Listening at: http://0.0.0.0:9092 (4979)
+[2021-08-12 10:54:35 +0000] [4979] [INFO] Using worker: uvicorn.workers.UvicornWorker
+[2021-08-12 10:54:35 +0000] [4982] [INFO] Booting worker with pid: 4982
+[2021-08-12 10:54:35 +0000] [4983] [INFO] Booting worker with pid: 4983
+[2021-08-12 10:54:35 +0000] [4984] [INFO] Booting worker with pid: 4984
+[2021-08-12 10:54:35 +0000] [4985] [INFO] Booting worker with pid: 4985
+[2021-08-12 10:54:35 +0000] [4986] [INFO] Booting worker with pid: 4986
+[2021-08-12 10:54:35 +0000] [4982] [INFO] Started server process [4982]
+[2021-08-12 10:54:35 +0000] [4982] [INFO] Waiting for application startup.
+[2021-08-12 10:54:35 +0000] [4982] [INFO] Application startup complete.
+[2021-08-12 10:54:36 +0000] [4983] [INFO] Started server process [4983]
+[2021-08-12 10:54:36 +0000] [4983] [INFO] Waiting for application startup.
+[2021-08-12 10:54:36 +0000] [4983] [INFO] Application startup complete.
+[2021-08-12 10:54:36 +0000] [4984] [INFO] Started server process [4984]
+[2021-08-12 10:54:36 +0000] [4984] [INFO] Waiting for application startup.
+[2021-08-12 10:54:36 +0000] [4984] [INFO] Application startup complete.
+[2021-08-12 10:54:36 +0000] [4985] [INFO] Started server process [4985]
+[2021-08-12 10:54:36 +0000] [4985] [INFO] Waiting for application startup.
+[2021-08-12 10:54:36 +0000] [4985] [INFO] Application startup complete.
+[2021-08-12 10:54:36 +0000] [4986] [INFO] Started server process [4986]
+[2021-08-12 10:54:36 +0000] [4986] [INFO] Waiting for application startup.
+[2021-08-12 10:54:36 +0000] [4986] [INFO] Application startup complete.
+[2021-08-12 10:54:38 +0000] [4979] [INFO] Handling signal: hup
+[2021-08-12 10:54:38 +0000] [4979] [INFO] Hang up: Master
+[2021-08-12 10:54:38 +0000] [4979] [WARNING] Worker with pid 4982 was terminated due to signal 1
+[2021-08-12 10:54:38 +0000] [4979] [WARNING] Worker with pid 4983 was terminated due to signal 1
+[2021-08-12 10:54:38 +0000] [4979] [WARNING] Worker with pid 4984 was terminated due to signal 1
+[2021-08-12 10:54:38 +0000] [4979] [WARNING] Worker with pid 4985 was terminated due to signal 1
+[2021-08-12 10:54:38 +0000] [4979] [WARNING] Worker with pid 4986 was terminated due to signal 1
+[2021-08-12 10:54:38 +0000] [4988] [INFO] Booting worker with pid: 4988
+[2021-08-12 10:54:38 +0000] [4989] [INFO] Booting worker with pid: 4989
+[2021-08-12 10:54:38 +0000] [4990] [INFO] Booting worker with pid: 4990
+[2021-08-12 10:54:38 +0000] [4991] [INFO] Booting worker with pid: 4991
+[2021-08-12 10:54:38 +0000] [4992] [INFO] Booting worker with pid: 4992
+[2021-08-12 10:54:39 +0000] [4988] [INFO] Started server process [4988]
+[2021-08-12 10:54:39 +0000] [4988] [INFO] Waiting for application startup.
+[2021-08-12 10:54:39 +0000] [4992] [INFO] Started server process [4992]
+[2021-08-12 10:54:39 +0000] [4992] [INFO] Waiting for application startup.
+[2021-08-12 10:54:39 +0000] [4989] [INFO] Started server process [4989]
+[2021-08-12 10:54:39 +0000] [4989] [INFO] Waiting for application startup.
+[2021-08-12 10:54:39 +0000] [4989] [INFO] Application startup complete.
+[2021-08-12 10:54:39 +0000] [4991] [INFO] Started server process [4991]
+[2021-08-12 10:54:39 +0000] [4991] [INFO] Waiting for application startup.
+[2021-08-12 10:54:39 +0000] [4991] [INFO] Application startup complete.
+[2021-08-12 10:54:39 +0000] [4992] [INFO] Application startup complete.
+[2021-08-12 10:54:39 +0000] [4990] [INFO] Started server process [4990]
+[2021-08-12 10:54:39 +0000] [4990] [INFO] Waiting for application startup.
+[2021-08-12 10:54:39 +0000] [4990] [INFO] Application startup complete.
+[2021-08-12 10:54:39 +0000] [4988] [INFO] Application startup complete.
